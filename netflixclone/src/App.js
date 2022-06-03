@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import tmdb from './tmdb';
 import './App.css';
 import Linha_filme from './components/Linha_filme';
-
+import Filme_destaque from './components/Filme_destaque'; 
 
 export default () => {
 
