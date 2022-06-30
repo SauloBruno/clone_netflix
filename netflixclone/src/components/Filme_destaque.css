@@ -9,7 +9,7 @@
 .featured--horizontal{
     width: inherit;
     height: inherit;
-    background: linear-gradient(to right, #111 30%, transparent 70%); /*30 - 70*/
+    background: linear-gradient(to right, #111 20%, transparent 80%); /*30 - 70*/
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,9 +37,9 @@
 }
 .featured--description{
     margin-top: 15px;
-    font-size: 20px;
+    font-size: 19px;
     color: #999;
-    max-width: 40%;
+    max-width: 50%;
 }
 .featured--buttons{
     margin-top: 15px;

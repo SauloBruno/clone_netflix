@@ -9,6 +9,7 @@ export default () => {
 
   const [movieList, setMovieList] = useState([]);
   const [FilmeData, setFilmeDestaque] = useState(null);
+  const [blackHeader, setBlackHeader] = useState(false);
 
   //quando a tela for carregada ele vai executar a função que eu digitar aqui 
   useEffect(()=>{
@@ -29,10 +30,29 @@ export default () => {
     loadAll();
   }, []);
 
+  useEffect(()=>{
+    const scrollListener = () => {
+      if(window.scrollY > 20)
+      {
+        setBlackHeader(true);
+      }
+      else
+      {
+        setBlackHeader(false);
+      }
+    }
+
+    window.addEventListener('scroll', scrollListener);
+    
+    return () => {
+      window.removeEventListener('scroll', scrollListener)
+    }
+  }, []);
+
   return (
     <div className='page'>
 
-      <Header/>
+      <Header black = {blackHeader} />
 
       {FilmeData && 
         <Filme_destaque item={FilmeData} />
@@ -43,6 +63,13 @@ export default () => {
           <Linha_filme key={key} title={item.title} itens={item.itens} />
         ))}
       </section>
+
+      <footer>
+        Feito com <span role="img" aria-label="coração">❤️</span> pela B7Web<br/>
+        Direitos de imagem para Netflix<br/>
+        Dados pegos no site Themoviedb.org
+      </footer>
+
     </div>
   );
 }
