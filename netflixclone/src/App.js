@@ -3,6 +3,7 @@ import tmdb from './tmdb';
 import './App.css';
 import Linha_filme from './components/Linha_filme';
 import Filme_destaque from './components/Filme_destaque'; 
+import Header from './components/Header';
 
 export default () => {
 
@@ -30,6 +31,8 @@ export default () => {
 
   return (
     <div className='page'>
+
+      <Header/>
 
       {FilmeData && 
         <Filme_destaque item={FilmeData} />
