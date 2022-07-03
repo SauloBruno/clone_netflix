@@ -69,7 +69,12 @@ export default () => {
         Direitos de imagem para Netflix<br/>
         Dados pegos no site Themoviedb.org
       </footer>
-
+      
+      {movieList.length <= 0 &&
+        <div className="loading">
+            <img src="https://pa1.narvii.com/6754/69cbf6269b370ec21652a9b81a91a2529ae2c368_hq.gif" alt="carregando" />
+        </div>
+      }
     </div>
   );
 }
